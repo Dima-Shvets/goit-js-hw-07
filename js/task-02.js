@@ -7,11 +7,14 @@ const ingredients = [
   'Приправы',
 ];
 
-const ingredientsListEl = document.getElementById("ingredients")
+const ingredientsListEl = document.getElementById('ingredients');
 
-const ingredientsArrayEl = ingredients.map(ingredient => {
-  const listElement = document.createElement("li");
-  return lisElement.textContent(`${ingredient}`)
-});
+function makeListElement(element) {
+  const listElement = document.createElement('li')
+  listElement.textContent = element;
+  return listElement
+}
 
-console.log(ingredientsArrayEl)
+const listEl = ingredients.map(makeListElement);
+
+ingredientsListEl.append(...listEl);
