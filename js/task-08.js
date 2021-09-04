@@ -20,10 +20,12 @@ function onRenderBtnClick() {
 function createBoxes(amount) {
     const boxes = [];
 
-    for (let i = 0; i <= amount; i += 1) {
+    if (amount > 0) {
+        for (let i = 0; i <= amount - 1; i += 1) {
         boxes.push(createBox(i))
     };
     boxesEl.append(...boxes)
+    }
 }
 
 function createBox(itterationNumber) {
